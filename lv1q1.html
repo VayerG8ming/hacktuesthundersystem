@@ -1,0 +1,62 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <title>
+    въпроси
+  </title>
+</head>
+<body>
+<p id="question"></p>
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+<p>points:</p>
+<p id="points"></p>
+<script>
+function setQuestion(number) {
+  $("p#points")[0].innerText = points
+
+  q = questions[number]
+  $("p#question")[0].innerText = q['question']
+  $("input[type=submit]")[0].value = q['answers'][0]
+  $("input[type=submit]")[1].value = q['answers'][1]
+  $("input[type=submit]")[2].value = q['answers'][2]
+
+  $("input[type=submit]").off()
+  $("input[type=submit]").click(function () {
+    answer = $(this).attr('value')
+
+    if (answer == q['correct_answer']) {
+      alert("Correct")
+      points=points+1
+    } else {
+      alert("Wrong")
+    }
+
+    question_number = question_number + 1
+    setQuestion(question_number)
+
+  })
+}
+
+question_number = 0
+var points=0
+
+questions = [
+  {question:'Кой е авторът на стихотворението "Майце си"?', answers:["Иван Вазов", "Христо Ботев", "Любен Каравелов"], correct_answer:"Христо Ботев"},
+  {question:'През коя година е основана Аспарухова България?', answers:["632 год.", "681 год.", "864 год."], correct_answer:"681 год."},
+  {question:'Колко на брой са синовете на хан Кубрат?', answers:["1", "3", "5"], correct_answer:"5"},
+  {question:'Кой е създателят на първия автомобил с ДВГ(Двигател с Вътрешно Горене)?', answers:["Хенри Форд", "Карл Бенц", "Николаус Ото"], correct_answer:"Карл Бенц"},
+  {question:'Кога за първи път е използвана оптичната мишка?', answers:["1980 год.", "1998 г.", "Когато е създаден и компютъра."], correct_answer:"1980 год."},
+  {question:'Колко е рекорда за скорост постигнат с парен локомотив през 1938?', answers:["53 км/ч", "103 км/ч", "203 км/ч"], correct_answer:"203 км/ч"},
+]
+
+setQuestion(question_number)
+
+
+</script>
+</body>
+</html>
