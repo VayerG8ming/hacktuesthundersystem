@@ -4,6 +4,9 @@
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+  <script
+      src=poluch.js></script>
+
   <title>
     въпроси
   </title>
@@ -13,7 +16,7 @@
   <input type="submit" name="otgovor" value="">
   <input type="submit" name="otgovor" value="">
   <input type="submit" name="otgovor" value="">
-<p>points:</p>
+<p id=rez>points:</p>
 <p id="points"></p>
 <script>
 function setQuestion(number) {
@@ -30,10 +33,10 @@ function setQuestion(number) {
     answer = $(this).attr('value')
 
     if (answer == q['correct_answer']) {
-      alert("Correct")
+      alert("Вярно")
       points=points+1
     } else {
-      alert("Wrong")
+      alert("Грешно")
     }
 
     question_number = question_number + 1

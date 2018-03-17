@@ -1,0 +1,62 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <title>
+    въпроси
+  </title>
+</head>
+<body>
+<p id="question"></p>
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+<p>points:</p>
+<p id="points"></p>
+<script>
+function setQuestion(number) {
+  $("p#points")[0].innerText = points
+
+  q = questions[number]
+  $("p#question")[0].innerText = q['question']
+  $("input[type=submit]")[0].value = q['answers'][0]
+  $("input[type=submit]")[1].value = q['answers'][1]
+  $("input[type=submit]")[2].value = q['answers'][2]
+
+  $("input[type=submit]").off()
+  $("input[type=submit]").click(function () {
+    answer = $(this).attr('value')
+
+    if (answer == q['correct_answer']) {
+      alert("Correct")
+      points=points+1
+    } else {
+      alert("Wrong")
+    }
+
+    question_number = question_number + 1
+    setQuestion(question_number)
+
+  })
+}
+
+question_number = 0
+var points=0
+
+questions = [
+  {question:'Кога се чества смъртта на Христо Ботев?', answers:["2-ри юли", "2-ри юни", "1-ви юни"], correct_answer:"2-ри юни"},
+  {question:'Кой български хан е въвел първите писани закони през 9 век?', answers:["Хан Крум", "Хан Аспарух", "Хан Тервел"], correct_answer:"Хан Крум"},
+  {question:'Кой е първият език, създаден за високо ниво програмиране?', answers:["FORTRAN", "Python", "Планкалкюл"], correct_answer:"Планкалкюл"},
+  {question:'Кой български хан победил арабите край Константинопол през 718 г., като по този начин спасил Европа от тяхното нашествие?', answers:["Хан Крум", "Хан Омуртаг", "Хан Тервел"], correct_answer:"Хан Тервел"},
+  {question:'При кой български владетел започнали да се секат първите монети?', answers:["Цар Борис I", "Цар Иван Асен II", "Цар Симеон"], correct_answer:"Цар Иван Асен II"},
+  {question:'През коя година излиза първата независима версия на Microsoft Windows?', answers:["1987 год.", "1985 год.", "1999 год."], correct_answer:"1985 год."},
+]
+
+setQuestion(question_number)
+document.cookie = "gold = " + points
+
+</script>
+</body>
+</html>

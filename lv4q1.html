@@ -30,10 +30,10 @@ function setQuestion(number) {
     answer = $(this).attr('value')
 
     if (answer == q['correct_answer']) {
-      alert("Correct")
+      alert("Вярно")
       points=points+1
     } else {
-      alert("Wrong")
+      alert("Грешно")
     }
 
     question_number = question_number + 1
@@ -55,7 +55,7 @@ questions = [
 ]
 
 setQuestion(question_number)
-
+document.cookie = "gold="+points;
 
 </script>
 </body>
