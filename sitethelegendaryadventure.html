@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/w3css/3/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="+ojl1FOMkX9WypfBe43D6kjPWDpRVMmhvJwXs1M3EMoAJtlCgqgvZv...png" <\link>
+<style>
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;  
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+</style>
+  <style>
+ .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+} 
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+} 
+</style>   
+
+<!-- Band Members -->
+    <article>
+<section class="w3-row-padding w3-center w3-light-grey">
+    <p>Current Date:</p>
+    <script language="JavaScript">
+function GrabTheDateFunction()
+{
+   // Get a the current date, then format it for display
+   var thisDate = new Date();
+ 
+   document.write("<p>The current date is: ");
+   document.write(thisDate.toDateString());
+   document.write("</p>");
+}
+ 
+// other values to use to display date:
+// thisDate.toDateString() --> Thu Mar 17 2016
+// thisDate.toISOString()  --> 2016-03-17T13:12:18.519Z
+// thisDate.toGMTString()  --> Thu, 17 Mar 2016 13:12:18 GMT
+// thisDate.toUTCString()  --> Thu, 17 Mar 2016 13:12:18 GMT
+// thisDate.toTimeString() --> 09:12:18 GMT-0400 (Eastern Daylight Time)
+ 
+</script>
+    <script language="JavaScript">
+    GrabTheDateFunction();
+</script>
+    <!--animation letters -->
+     <h1>
+<script language="JavaScript1.2">
+ var message="Welcome to The Legengary Adventure's official website! Enjoy!"
+ var neonbasecolor="orange"
+ var neontextcolor="black"
+ var flashspeed=100  //in milliseconds
+///No need to edit below this line/////
+var n=0
+if (document.all||document.getElementById){
+ document.write('<font color="'+neonbasecolor+'">')
+ for (m=0;m<message.length;m++)
+ document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+ function crossref(number){
+ var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+ return crossobj
+}
+function neon(){
+//Change all letters to base color 
+if (n==0){
+for (m=0;m<message.length;m++)
+//eval("document.all.neonlight"+m).style.color=neonbasecolor
+crossref(m).style.color=neonbasecolor
+ }
+ //cycle through and change individual letters to neon color
+ crossref(n).style.color=neontextcolor
+ if (n<message.length-1)
+ n++
+ else{
+ n=0
+ clearInterval(flashing)
+ setTimeout("beginneon()",1500)
+ return
+ }
+ }
+ function beginneon(){
+ if (document.all||document.getElementById)
+ flashing=setInterval("neon()",flashspeed)
+ }
+ beginneon()
+ </script>
+ </h1>
+    <!--play-->
+    <div style="text-align:center"><button onclick="playgame()" class="button" style="vertical-align:middle"><span>Play The Game</span> </button></div>
+      <div style="text-align:center"><button onclick="playgame1()" class="button" style="vertical-align:middle"><span>Play Quiz 1</span> </button></div>
+      <div style="text-align:center"><button onclick="playgame2()" class="button" style="vertical-align:middle"><span>Play Quiz 2</span> </button></div>
+      <div style="text-align:center"><button onclick="playgame3()" class="button" style="vertical-align:middle"><span>Play Quiz 3</span> </button></div>
+      <div style="text-align:center"><button onclick="playgame4()" class="button" style="vertical-align:middle"><span>Play Quiz 4</span> </button></div>
+  <p>Comment:</p>
+    <!-- begin htmlcommentbox.com -->
+  <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
+   <link rel="stylesheet" type="text/css" href="http://www.htmlcommentbox.com/static/skins/default/skin.css" />
+ <script type="text/javascript" language="javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={  };} (function(){s=document.createElement("script");s.setAttribute("type","text/javascript");s.setAttribute("src", "http://www.htmlcommentbox.com/jread?page="+escape((window.hcb_user && hcb_user.PAGE)||(""+window.location)).replace("+","%2B")+"&opts=470&num=10");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+  <!-- end htmlcommentbox.com -->
+        </section>
+    </article>
+
+
+<!-- Footer -->
+    
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+    
+     
+      <p>Creators:</p>
+
+</div>
+    <p>Martin Vayer:</p>
+    <p><a href="https://www.facebook.com/profile.php?id=100008342310239" class="fa fa-facebook"></a></p>
+    <p><a href="https://twitter.com/VayerGaming" class="fa fa-twitter"></a></p>
+    <p><a href="https://www.instagram.com/vayergaming/" class="fa fa-instagram"></a></p>
+    <a href="https://www.vayerg8ming.free.bg" class="fa fa-google"></a>
+    <p>Martin Vrachev:</p>
+    <p><a href="https://www.facebook.com/profile.php?id=100001369378027&fref=pb&hc_location=friends_tab&pnref=friends.all" class="fa fa-facebook"></a></p>
+    <p><a href="https://www.instagram.com/gluhtuten/" class="fa fa-instagram"></a></p>
+    <p>Martin Damianov:</p>
+    <p><a href="https://www.facebook.com/maria.simeonova.395?fref=pb&hc_location=friends_tab&pnref=friends.all" class="fa fa-facebook"></a></p>
+    <p>Bobi Ivanov:</p>
+    <p><a href="https://www.facebook.com/profile.php?id=100004688957755&fref=pb&hc_location=friends_tab&pnref=friends.all" class="fa fa-facebook"></a></p>
+    <p><a href="https://www.instagram.com/bobkata_e_gladen/" class="fa fa-instagram"></a></p>
+   
+    <p>Peter Damianov:</p>
+    <p><a href="https://www.facebook.com/petar.damianov.927?fref=pb&hc_location=friends_tab&pnref=friends.all" class="fa fa-facebook"></a></p>
+    
+
+<script>
+    function playgame(){window.open("https://www.thelegendaryadventure.free.bg/playgame.html");}
+    function playgame1(){window.open("https://www.thelegendaryadventure.free.bg/quiz/quiz1.html");}
+    function playgame2(){window.open("https://www.thelegendaryadventure.free.bg/quiz/quiz2.html");}
+    function playgame3(){window.open("https://www.thelegendaryadventure.free.bg/quiz/quiz3.html");}
+    function playgame4(){window.open("https://www.thelegendaryadventure.free.bg/quiz/quiz4.html");}
+    </script>
+
+</body>
+</html>

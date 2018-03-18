@@ -1,0 +1,71 @@
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <title>
+    въпроси
+  </title>
+  <style>
+    input  {
+  background-color:#44c767;
+  border-radius:28px;
+  border:1px solid #18ab29;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:14px;
+  padding:5px 29px;
+  text-shadow:0px 1px 0px #2f6627;
+  }
+  // Взето от https://www.bestcssbuttongenerator.com/
+  </style>
+</head>
+<body>
+<p id="question"></p>
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+<p>points:</p>
+<p id="points"></p>
+<script>
+function setQuestion(number) {
+  $("p#points")[0].innerText = points
+  q = questions[number]
+  $("p#question")[0].innerText = q['question']
+  $("input[type=submit]")[0].value = q['answers'][0]
+  $("input[type=submit]")[1].value = q['answers'][1]
+  $("input[type=submit]")[2].value = q['answers'][2]
+  $("input[type=submit]").off()
+  $("input[type=submit]").click(function () {
+    answer = $(this).attr('value')
+    if (answer == q['correct_answer']) {
+      alert("Вярно")
+      points=points+1
+    } else {
+      alert("Грешно")
+    }
+    question_number = question_number + 1
+     /////////////
+    if(question_number==6){
+    window.open("https://www.thelegendaryadventure.free.bg");
+    }
+    setQuestion(question_number)
+  })
+}
+question_number = 0
+var points=0
+questions = [
+  {question:'Кой е последният княз на България?', answers:["Фердинант I", "Борис III", "Александър I Батенберг"], correct_answer:"Фердинант I"},
+  {question:'През кои години се води Първата балканска война?', answers:["1913-1916 год.", "само през 1912", "1912-1913 год."], correct_answer:"1912-1913 год."},
+  {question:'Кога честваме смъртта на Христо Ботев?', answers:["2-ри юни", "1-ви юни", "2-ри юли"], correct_answer:"2-ри юни"},
+  {question:'Кога е избухнала бомбата в Херушима?', answers:["1944 год.", "1945 год.", "1946 год."], correct_answer:"1945 год."},
+  {question:'Kой е създателят фейсбук?', answers:["Джон Атанасов", "Чъд Харли", "Марк Зъкърбърг"], correct_answer:"Марк Зъкърбърг"},
+  {question:'Кой създава Български революционен централен комитет (БРЦК) в Букурещ през 1869 г.?', answers:["Любен Каравелов", "Георги Раковски", "Васил Левски"], correct_answer:"Георги Раковски"},
+]
+setQuestion(question_number)
+document.cookie = "gold="+points;
+</script>
+</body>
+</html>

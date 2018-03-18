@@ -1,0 +1,74 @@
+
+<html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script
+      src=poluch.js></script>
+
+  <title>
+    въпроси
+  </title>
+  <style>
+    input  {
+  background-color:#44c767;
+  border-radius:28px;
+  border:1px solid #18ab29;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:14px;
+  padding:5px 29px;
+  text-shadow:0px 1px 0px #2f6627;
+  }
+  // Взето от https://www.bestcssbuttongenerator.com/
+  </style>
+</head>
+<body>
+<p id="question"></p>
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+  <input type="submit" name="otgovor" value="">
+<p id=rez>points:</p>
+<p id="points"></p>
+<script>
+function setQuestion(number) {
+  $("p#points")[0].innerText = points
+  q = questions[number]
+  $("p#question")[0].innerText = q['question']
+  $("input[type=submit]")[0].value = q['answers'][0]
+  $("input[type=submit]")[1].value = q['answers'][1]
+  $("input[type=submit]")[2].value = q['answers'][2]
+  $("input[type=submit]").off()
+  $("input[type=submit]").click(function () {
+    answer = $(this).attr('value')
+    if (answer == q['correct_answer']) {
+      alert("Вярно")
+      points=points+1
+    } else {
+      alert("Грешно")
+    }
+    question_number = question_number + 1
+     /////////////
+    if(question_number==6){
+    window.open("https://www.thelegendaryadventure.free.bg");
+    }
+    setQuestion(question_number)
+  })
+}
+question_number = 0
+var points=0
+questions = [
+  {question:'През коя година княз Борис е покръстил българите?', answers:["862-863", "864-865", "865-866"], correct_answer:"864-865"},
+  {question:'Кой е създал теоремата "Сборът от квадратите на катетите е равен на квадрата на хипотенузата на правоъгълен триъгълник"?', answers:["Архимед", "Питагор", "Аристотел"], correct_answer:"Питагор"},
+  {question:'Къде е роден Апостолът на свободата Васил Левски?', answers:["Сопот", "Карлово", "Калоферг"], correct_answer:"Карлово"},
+  {question:'От коя до коя година  е Руско – турската освободителна война?', answers:["1874-1875", "1877-1878", "1876-1877"], correct_answer:"1877-1878"},
+  {question:' Кой от езиците не е компютърен', answers:[" Basic", " Logo", "Esperanto"], correct_answer:"Esperanto"},
+  {question:'Коя година България пада под византийска власт?', answers:["1019", "1017", "1018"], correct_answer:"1018"},
+]
+setQuestion(question_number)
+</script>
+</body>
+</html>
