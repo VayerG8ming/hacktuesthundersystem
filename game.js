@@ -1,5 +1,5 @@
 // Creating variables
-var myX = 0, myY = 0;patronX=200,patronY=200;vragX=400,vragY=0;to4ki=0;skorost=3; zivot=10;vragX2=150,vragY2=0;goleminaX=30,goleminaY=30;goleminaX2=30,goleminaY2=30;
+var myX = 0, myY = 0;patronX=200,patronY=200;vragX=400,vragY=0;to4ki=0;skorost=40; zivot=10;vragX2=150,vragY2=0;goleminaX=30,goleminaY=30;goleminaX2=30,goleminaY2=30;
 
 function update() {
     myX = myX+(mouseX-myX)/10;
